@@ -100,10 +100,10 @@ There are two parts to configuration: the Minecraft plugin configuration and the
           "deploy": "wrangler deploy --minify",
           "dev": "wrangler dev",
           "drizzle:generate": "drizzle-kit generate",
-   -      "migrate": "wrangler d1 migrations apply --remote me-dcnt-mc-verify-d1",
-   -      "migrate:dev": "wrangler d1 migrations apply --local me-dcnt-mc-verify-d1"
-   +      "migrate": "wrangler d1 migrations apply --remote <YOUR_DATABASE_NAME>",
-   +      "migrate:dev": "wrangler d1 migrations apply --local <YOUR_DATABASE_NAME>"
+    -     "migrate": "wrangler d1 migrations apply --remote me-dcnt-mc-verify-d1",
+    -     "migrate:dev": "wrangler d1 migrations apply --local me-dcnt-mc-verify-d1"
+    +     "migrate": "wrangler d1 migrations apply --remote <YOUR_DATABASE_NAME>",
+    +     "migrate:dev": "wrangler d1 migrations apply --local <YOUR_DATABASE_NAME>"
       },
     ```
 11. Create a Discord Application.
