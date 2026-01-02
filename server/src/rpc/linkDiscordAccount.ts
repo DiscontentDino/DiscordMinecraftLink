@@ -197,7 +197,7 @@ const handler: RPCHandlerFn<typeof paramsSchema, typeof resultSchema> = async ({
                     set: {
                         minecraftUUID: flow.minecraftUUID,
                     },
-                    target: minecraftUsers.minecraftUUID
+                    target: minecraftUsers.minecraftUUID,
                 })
                 .returning(),
         ]),
