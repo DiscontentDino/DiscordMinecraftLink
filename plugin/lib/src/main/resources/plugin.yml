@@ -1,0 +1,7 @@
+name: DiscordMinecraftLink
+description: A Minecraft plugin for Discord verification.
+author: Dcnt
+website: https://github.com/DiscontentDino/DiscordMinecraftLink
+version: 1.0.0
+main: me.dcnt.mc.verify.Main
+api-version: '1.21.11'

@@ -1,0 +1,9 @@
+# Discord Minecraft Link Configuration
+
+# The shared secret for secure communication with the server
+# Generate one with: openssl rand 64 | base64
+# Note: Empty shared-secret are not supported.
+shared-secret: ""
+
+# The URL of the Discord verification server
+server-url: "https://verify.example.com"
