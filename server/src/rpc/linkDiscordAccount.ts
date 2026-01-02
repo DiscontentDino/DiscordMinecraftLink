@@ -193,7 +193,12 @@ const handler: RPCHandlerFn<typeof paramsSchema, typeof resultSchema> = async ({
                     createdAt: now,
                     minecraftUUID: flow.minecraftUUID,
                 })
-                .onConflictDoNothing()
+                .onConflictDoUpdate({
+                    set: {
+                        minecraftUUID: flow.minecraftUUID,
+                    },
+                    target: minecraftUsers.minecraftUUID
+                })
                 .returning(),
         ]),
     );
