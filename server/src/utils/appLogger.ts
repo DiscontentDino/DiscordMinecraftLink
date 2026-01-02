@@ -33,7 +33,7 @@ export class AppLogger {
     }
 
     /**
-     * Create the root logger used in the sigleton. All loggers derive from this root logger.
+     * Create the root logger used in the singleton. All loggers derive from this root logger.
      * @returns The root AppLogger instance.
      */
     private static createRootLogger(): AppLogger {
