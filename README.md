@@ -111,7 +111,7 @@ There are two parts to configuration: the Minecraft plugin configuration and the
     2. Keep note of the `Client ID` and `Client Secret` (regenerate if necessary).
     3. Under "Redirects", add the following redirect URL:
        ```
-       https://<YOUR_CUSTOM_DOMAIN>/discord/callback/
+       https://<YOUR_CUSTOM_DOMAIN>/oauth2/discord/
        ```
 12. Run `pnpm wrangler deploy` to deploy the Cloudflare Worker.
 13. Add your secret and Discord application credentials to the Cloudflare Worker environment variables.
