@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" class="bg-zinc-950 text-zinc-400 antialiased">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; script-src 'self'; img-src 'self' data:; connect-src 'self';">
+    <link rel="icon" href="/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Noto+Sans+SC:wght@100..900&display=swap" rel="stylesheet">
+    <title>Account Linking</title>
+    <link rel="stylesheet" href="/assets/styles.css" />
+    <script type="module" src="/oauth2/discord/index.js"></script>
+</head>
+<body class="flex items-center justify-center min-h-screen p-4 md:p-8 font-mono">
+    <div class="w-full max-w-4xl flex flex-col gap-4 items-center">
+        <div id="icon" class="relative w-10 h-10 text-zinc-100" aria-label="Loading..." role="status" aria-live="polite">
+            <svg id="loadingIcon" aria-hidden="true" class="absolute opacity-100 scale-100 blur-none transition-all duration-500 ease-out animate-loader-spin" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4"/><path d="m16.2 7.8 2.9-2.9"/><path d="M18 12h4"/><path d="m16.2 16.2 2.9 2.9"/><path d="M12 18v4"/><path d="m4.9 19.1 2.9-2.9"/><path d="M2 12h4"/><path d="m4.9 4.9 2.9 2.9"/></svg>
+            <svg id="failureIcon" aria-hidden="true" class="absolute opacity-0 scale-80 blur-xs transition-all duration-500 ease-out text-red-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+            <svg id="successIcon" aria-hidden="true" class="absolute opacity-0 scale-80 blur-xs transition-all duration-500 ease-out" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+        </div>
+        <h1 class="relative font-bold text-zinc-100 w-full flex items-center justify-center h-8" aria-hidden="true">
+            <span id="loadingText" class="absolute flex blur-none opacity-100 transition-all duration-500 scale-100 ease-out">Linking...</span>
+            <span id="successText" class="absolute flex blur-xs opacity-0 transition-all duration-500 scale-80 ease-out">Success!</span>
+            <span id="failureText" class="absolute flex blur-xs opacity-0 transition-all duration-500 scale-80 ease-out text-red-400"></span>
+        </h1>
+    </div>
+</body>
+</html>

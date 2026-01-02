@@ -1,0 +1,34 @@
+{
+    "dependencies": {
+        "drizzle-orm": "^0.45.1",
+        "hono": "^4.11.2",
+        "pino": "^10.1.0",
+        "tailwindcss": "^4.1.18",
+        "zod": "^4.2.1"
+    },
+    "devDependencies": {
+        "@biomejs/biome": "^2.3.10",
+        "@tailwindcss/cli": "^4.1.18",
+        "@types/node": "^25.0.3",
+        "drizzle-kit": "^0.31.8",
+        "wrangler": "^4.54.0"
+    },
+    "license": "GPL-2.0-only",
+    "name": "server",
+    "packageManager": "pnpm@10.15.0",
+    "private": true,
+    "scripts": {
+        "biome:check": "biome check",
+        "biome:fix": "biome check --fix",
+        "cf-typegen": "wrangler types",
+        "deploy": "pnpm tailwind:build && wrangler deploy --minify",
+        "dev": "pnpm tailwind:build && wrangler dev",
+        "drizzle:generate": "drizzle-kit generate",
+        "migrate": "wrangler d1 migrations apply --remote me-dcnt-mc-verify-d1",
+        "migrate:dev": "wrangler d1 migrations apply --local me-dcnt-mc-verify-d1",
+        "tailwind:build": "tailwindcss -i ./src/app.css -o ./public/assets/styles.css --minify",
+        "tailwind:watch": "tailwindcss -i ./src/app.css -o ./public/assets/styles.css --watch"
+    },
+    "type": "module",
+    "version": "1.0.0"
+}

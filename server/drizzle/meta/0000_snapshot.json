@@ -1,0 +1,223 @@
+{
+    "_meta": {
+        "columns": {},
+        "schemas": {},
+        "tables": {}
+    },
+    "dialect": "sqlite",
+    "enums": {},
+    "id": "0c1ad80e-84a7-4a41-8e2d-fb924dff6b80",
+    "internal": {
+        "indexes": {}
+    },
+    "prevId": "00000000-0000-0000-0000-000000000000",
+    "tables": {
+        "connections": {
+            "checkConstraints": {},
+            "columns": {
+                "createdAt": {
+                    "autoincrement": false,
+                    "name": "createdAt",
+                    "notNull": true,
+                    "primaryKey": false,
+                    "type": "integer"
+                },
+                "discordUserID": {
+                    "autoincrement": false,
+                    "name": "discordUserID",
+                    "notNull": true,
+                    "primaryKey": false,
+                    "type": "integer"
+                },
+                "id": {
+                    "autoincrement": true,
+                    "name": "id",
+                    "notNull": true,
+                    "primaryKey": true,
+                    "type": "integer"
+                },
+                "minecraftUserID": {
+                    "autoincrement": false,
+                    "name": "minecraftUserID",
+                    "notNull": true,
+                    "primaryKey": false,
+                    "type": "integer"
+                }
+            },
+            "compositePrimaryKeys": {},
+            "foreignKeys": {
+                "connections_discordUserID_discordUsers_id_fk": {
+                    "columnsFrom": ["discordUserID"],
+                    "columnsTo": ["id"],
+                    "name": "connections_discordUserID_discordUsers_id_fk",
+                    "onDelete": "no action",
+                    "onUpdate": "no action",
+                    "tableFrom": "connections",
+                    "tableTo": "discordUsers"
+                },
+                "connections_minecraftUserID_minecraftUsers_id_fk": {
+                    "columnsFrom": ["minecraftUserID"],
+                    "columnsTo": ["id"],
+                    "name": "connections_minecraftUserID_minecraftUsers_id_fk",
+                    "onDelete": "no action",
+                    "onUpdate": "no action",
+                    "tableFrom": "connections",
+                    "tableTo": "minecraftUsers"
+                }
+            },
+            "indexes": {
+                "connections_discordUserID_unique": {
+                    "columns": ["discordUserID"],
+                    "isUnique": true,
+                    "name": "connections_discordUserID_unique"
+                },
+                "connections_minecraftUserID_unique": {
+                    "columns": ["minecraftUserID"],
+                    "isUnique": true,
+                    "name": "connections_minecraftUserID_unique"
+                }
+            },
+            "name": "connections",
+            "uniqueConstraints": {}
+        },
+        "discordUsers": {
+            "checkConstraints": {},
+            "columns": {
+                "createdAt": {
+                    "autoincrement": false,
+                    "name": "createdAt",
+                    "notNull": true,
+                    "primaryKey": false,
+                    "type": "integer"
+                },
+                "discordID": {
+                    "autoincrement": false,
+                    "name": "discordID",
+                    "notNull": true,
+                    "primaryKey": false,
+                    "type": "text"
+                },
+                "discordRefreshToken": {
+                    "autoincrement": false,
+                    "name": "discordRefreshToken",
+                    "notNull": false,
+                    "primaryKey": false,
+                    "type": "text"
+                },
+                "id": {
+                    "autoincrement": true,
+                    "name": "id",
+                    "notNull": true,
+                    "primaryKey": true,
+                    "type": "integer"
+                }
+            },
+            "compositePrimaryKeys": {},
+            "foreignKeys": {},
+            "indexes": {
+                "discordUsers_discordID_unique": {
+                    "columns": ["discordID"],
+                    "isUnique": true,
+                    "name": "discordUsers_discordID_unique"
+                }
+            },
+            "name": "discordUsers",
+            "uniqueConstraints": {}
+        },
+        "minecraftUsers": {
+            "checkConstraints": {},
+            "columns": {
+                "createdAt": {
+                    "autoincrement": false,
+                    "name": "createdAt",
+                    "notNull": true,
+                    "primaryKey": false,
+                    "type": "integer"
+                },
+                "id": {
+                    "autoincrement": true,
+                    "name": "id",
+                    "notNull": true,
+                    "primaryKey": true,
+                    "type": "integer"
+                },
+                "minecraftUUID": {
+                    "autoincrement": false,
+                    "name": "minecraftUUID",
+                    "notNull": true,
+                    "primaryKey": false,
+                    "type": "text"
+                }
+            },
+            "compositePrimaryKeys": {},
+            "foreignKeys": {},
+            "indexes": {
+                "minecraftUsers_minecraftUUID_unique": {
+                    "columns": ["minecraftUUID"],
+                    "isUnique": true,
+                    "name": "minecraftUsers_minecraftUUID_unique"
+                }
+            },
+            "name": "minecraftUsers",
+            "uniqueConstraints": {}
+        },
+        "verificationFlows": {
+            "checkConstraints": {},
+            "columns": {
+                "createdAt": {
+                    "autoincrement": false,
+                    "name": "createdAt",
+                    "notNull": true,
+                    "primaryKey": false,
+                    "type": "integer"
+                },
+                "expiresAt": {
+                    "autoincrement": false,
+                    "name": "expiresAt",
+                    "notNull": true,
+                    "primaryKey": false,
+                    "type": "integer"
+                },
+                "id": {
+                    "autoincrement": true,
+                    "name": "id",
+                    "notNull": true,
+                    "primaryKey": true,
+                    "type": "integer"
+                },
+                "linkingCode": {
+                    "autoincrement": false,
+                    "name": "linkingCode",
+                    "notNull": true,
+                    "primaryKey": false,
+                    "type": "text"
+                },
+                "minecraftUUID": {
+                    "autoincrement": false,
+                    "name": "minecraftUUID",
+                    "notNull": true,
+                    "primaryKey": false,
+                    "type": "text"
+                }
+            },
+            "compositePrimaryKeys": {},
+            "foreignKeys": {},
+            "indexes": {
+                "verificationFlows_linkingCode_unique": {
+                    "columns": ["linkingCode"],
+                    "isUnique": true,
+                    "name": "verificationFlows_linkingCode_unique"
+                },
+                "verificationFlows_minecraftUUID_unique": {
+                    "columns": ["minecraftUUID"],
+                    "isUnique": true,
+                    "name": "verificationFlows_minecraftUUID_unique"
+                }
+            },
+            "name": "verificationFlows",
+            "uniqueConstraints": {}
+        }
+    },
+    "version": "6",
+    "views": {}
+}

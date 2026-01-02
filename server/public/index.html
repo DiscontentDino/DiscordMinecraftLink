@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" class="bg-zinc-950 text-zinc-400 antialiased">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; script-src 'self'; img-src 'self' data:; connect-src 'self';">
+    <link rel="icon" href="/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Noto+Sans+SC:wght@100..900&display=swap" rel="stylesheet">
+    <title>Account Linking</title>
+    <link rel="stylesheet" href="/assets/styles.css" />
+    <script type="module" src="/index.js"></script>
+</head>
+<body class="flex items-center justify-center min-h-screen p-4 md:p-8 font-mono">
+    <div class="w-full max-w-4xl flex flex-col gap-8">
+        <div class="flex flex-col gap-2">
+            <h1 class="text-4xl font-bold text-zinc-100">Account Linking</h1>
+            <p>Enter the alphanumeric code shown in game.</p>
+        </div>
+        <div class="flex gap-2">
+            <div class="relative">
+                <label for="codeInput" class="sr-only">Alphanumeric code</label>
+                <input id="codeInput" type="text" placeholder="000000" class="peer px-4 w-64 h-10 h-full rounded-md bg-zinc-800 border border-zinc-700 focus-visible:border-zinc-300 focus-visible:outline-none transition disabled:border-zinc-700 disabled:cursor-not-allowed" />
+                <div class="pointer-events-none absolute inset-0 rounded-md transition
+                        peer-disabled:bg-zinc-950/50 border border-transparent z-10">
+                </div>
+            </div>
+            <div class="relative">
+                <button id="submitButton" aria-label="Submit code" class="relative h-10 w-10 peer group flex items-center justify-center bg-indigo-600 border border-indigo-700 rounded-md text-white focus-visible:border-zinc-300 outline-none transition cursor-pointer disabled:bg-indigo-600 disabled:bg-indigo-600 disabled:border-indigo-700 disabled:cursor-not-allowed">
+                    <svg id="forwardArrowIcon" aria-hidden="true" class="absolute p-2 opacity-100 scale-100 blur-none transition-all ease-out"  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                    <svg id="loaderIcon" aria-hidden="true" class="absolute p-2 opacity-0 scale-50 blur-xs transition-all ease-out animate-loader-spin lucide lucide-loader-icon lucide-loader" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4"/><path d="m16.2 7.8 2.9-2.9"/><path d="M18 12h4"/><path d="m16.2 16.2 2.9 2.9"/><path d="M12 18v4"/><path d="m4.9 19.1 2.9-2.9"/><path d="M2 12h4"/><path d="m4.9 4.9 2.9 2.9"/></svg>
+                </button>
+                <div class="pointer-events-none absolute inset-0 rounded-md border border-transparent z-10 transition peer-focus:bg-zinc-950/20 peer-hover:bg-zinc-950/20 peer-active:bg-zinc-950/40 peer-disabled:bg-zinc-950/50"></div>
+            </div>
+        </div>
+        <div id="messageContainer" class="hidden text-red-400"></div>
+    </div>
+</body>
+</html>

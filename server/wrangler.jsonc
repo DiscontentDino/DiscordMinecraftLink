@@ -1,0 +1,34 @@
+{
+    "$schema": "./node_modules/wrangler/config-schema.json",
+    "assets": {
+        "binding": "ASSETS",
+        "directory": "./public"
+    },
+    "compatibility_date": "2025-12-02",
+    "compatibility_flags": ["nodejs_compat"],
+    "d1_databases": [
+        {
+            "binding": "database",
+            "database_id": "6c7cce96-2239-4851-bf6e-e75686c4625d",
+            "database_name": "me-dcnt-mc-verify-d1",
+            "migrations_dir": "drizzle"
+        }
+    ],
+    "main": "src/index.ts",
+    "name": "me-dcnt-mc-verify",
+    "observability": {
+        "enabled": true
+    },
+    "preview_urls": false,
+    "routes": [
+        {
+            "custom_domain": true,
+            "pattern": "verify.mc.dcnt.me"
+        }
+    ],
+    "vars": {
+        "APP_URL": "https://verify.mc.dcnt.me",
+        "NODE_ENV": "production"
+    },
+    "workers_dev": false
+}
